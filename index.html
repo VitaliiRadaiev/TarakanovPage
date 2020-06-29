@@ -1024,7 +1024,7 @@
 						Мы перезвоним!
 					</h3>
 					<div class="popup_form-wrap">
-						<form action="/" class="popup_form">
+						<form action="/" id="popupForm" class="popup_form">
 							<div class="popup_form_input-wrap">
 								<span class="icon-user"></span>
 								<input class="popup_form_input" type="text" name="name" placeholder="Ваше имя" required>
@@ -1040,6 +1040,9 @@
 							<div class="popup_form_input-wrap">
 								<span class="icon-comments"></span>
 								<input class="popup_form_input" type="text" name="comment" placeholder="Комментарий" required>
+							</div>
+							<div class="popup_form_reCAPTCHA">
+								<div class="g-recaptcha" data-sitekey="6Lf3BqsZAAAAAK1O96IbR0ej9WH8Pu21_AMgn2v_"></div>
 							</div>
 							<div class="popup_form_input-wrap popup_form_input-btn-wrap">
 								<input class="popup_form_input-btn" type="submit" name="poputBtn" value="Заказать звонок">
@@ -1149,6 +1152,7 @@
 	<!-- AND Popups -->
   
   <script src="js/jQuery-min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script src="js/libs.min.js"></script>
   <script src="js/main.js"></script>
 </body>

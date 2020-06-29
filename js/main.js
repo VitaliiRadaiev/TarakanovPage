@@ -204,7 +204,14 @@ $(document).ready(function(){
 
 	// ==== AND Popup form handler ====
 
-	
+	// ==== reCaptcha ====
+		document.getElementById('popupForm').onsubmit = function () {
+		    if (!grecaptcha.getResponse()) {
+		         alert('Вы не заполнили поле Я не робот!');
+		         return false; 
+		    }
+		}
+	// ==== AND reCaptcha ====
 
 });
 
