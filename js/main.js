@@ -36,7 +36,6 @@ $(document).ready(function(){
 
 	function subListHandler(e, item) {
 		e.preventDefault();
-		console.log(e)
 	}
 
 	toggleMobileBtn.onclick = () => {
@@ -59,7 +58,6 @@ $(document).ready(function(){
 			e.target.classList.toggle('open')
 			let subList = e.target.nextElementSibling;
 			for(item of mobileList.children) {
-				console.log(item.lastElementChild)
 				if(item.lastElementChild === subList) {
 					continue;
 				}
@@ -171,12 +169,22 @@ $(document).ready(function(){
 		}, timeout);
 	}
 
-	// document.addEventListener('keydown', function(e) {
-	// 	if(e.which === 27) {
-	// 		const popupActive = document.querySelector('.popup.open');
-	// 		popupClose(popupActive);
-	// 	}
-	// });
+	document.addEventListener('keydown', function(e) {
+		if(e.which === 27) {
+			const popupActive = document.querySelector('.popup.open');
+			popupClose(popupActive);
+		}
+	});
+
+	popup.addEventListener('swiped-right', function(e) {
+	    const popupActive = document.querySelector('.popup.open');
+	    popupClose(popupActive);
+	});
+
+	geoPopup.addEventListener('swiped-right', function(e) {
+	    const popupActive = document.querySelector('.popup.open');
+	    popupClose(popupActive);
+	});
 
 	// === Polyfill ===
 		(function() {
@@ -203,6 +211,7 @@ $(document).ready(function(){
 	// === AND Polyfill ===
 
 	// ==== AND Popup form handler ====
+
 
 	// ==== reCaptcha ====
 		document.getElementById('popupForm').onsubmit = function () {
